@@ -1,6 +1,7 @@
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    export ANDROID_ROOT /system_root
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
@@ -8,8 +9,8 @@ on fs
     start pulldecryptfiles
     install_keyring
     setprop ro.hardware.bootctrl msm8953
-	
-	
+
+
     # Needed to make qseecomd work in recovery
     chmod 0777 /dev/qseecom
     chmod 0664 /dev/ion
