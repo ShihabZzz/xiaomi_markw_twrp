@@ -73,24 +73,24 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
-## TWRP Configuration
+# TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_INCLUDE_CRYPTO := true
 TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_EXCLUDE_SUPERSU := true
+TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_SUPPRESS_SECURE_ERASE := true
-RECOVERY_SDCARD_ON_DATA := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_NO_SCREEN_BLANK := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/soc/7000000.ssusb/7000000.dwc3/gadget/lun%d/file"
-TW_INCLUDE_NTFS_3G := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_IGNORE_MISC_WIPE_DATA := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-#TW_USE_TOOLBOX := true
-TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+TW_USE_TOOLBOX := true
+TW_NO_EXFAT_FUSE := true
+
+TW_EXCLUDE_TWRPAPP := true
+
+# Supress error messages while building
+ALLOW_MISSING_DEPENDENCIES := true
 
 #enable Logcat in twrp
 TWRP_INCLUDE_LOGCAT := true
@@ -100,20 +100,4 @@ TARGET_USES_LOGD := true
 BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
 TARGET_COPY_OUT_VENDOR := vendor
 
-# exclude Twrp app
-TW_EXCLUDE_TWRPAPP := true
-
-#For reverse navbar (default "0")
-TW_SPECIFIC_SAMSUNG_NAVBAR := "1"
-
-#adbd insecure
-BOARD_ALWAYS_INSECURE := true
-
-## Experimentation
-#TW_HAS_DOWNLOAD_MODE = true
-#TW_HAS_EDL_MODE = true
-
-TW_DEVICE_VERSION := 21-beta-markw
-
-# supress error messages while building
-ALLOW_MISSING_DEPENDENCIES := true
+TW_DEVICE_VERSION := 22-beta-markw
