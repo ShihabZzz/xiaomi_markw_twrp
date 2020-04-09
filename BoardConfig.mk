@@ -38,6 +38,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_NO_BOOTLOADER := true
 
 ## Crypto
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
 
 ## Kernel
@@ -100,4 +101,4 @@ TARGET_USES_LOGD := true
 BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
 TARGET_COPY_OUT_VENDOR := vendor
 
-TW_DEVICE_VERSION := 22-beta-markw
+TW_DEVICE_VERSION := 23-beta-markw
